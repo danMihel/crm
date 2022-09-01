@@ -25,9 +25,9 @@ const router = createRouter({
   routes
 })
 
-/* router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   if(to.name !== 'login' && store.state.AuthModule.logged === false) next( {name:'login'});
   else next()
-}) */
+})
 
 export default router
