@@ -51,7 +51,7 @@ export default {
       this.$store.dispatch("AuthModule/onLogin");
     },
   },
-  mounted() {
+  /* mounted() {
     this.$store.dispatch("AuthModule/LoginCheck");
     fetch("http://192.168.0.254:8080/api/auth/admin", {
       method: "POST",
@@ -60,12 +60,12 @@ export default {
     })
       .then((resp) => resp.text())
       .then(console.log);
-  },
+  }, */
 };
 </script>
 <style>
 .auth-card {
-  max-width: 450px;
+  max-width: 350px;
   margin: auto;
   margin-top: 10vh;
   padding: 30px;

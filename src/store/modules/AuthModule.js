@@ -53,7 +53,6 @@ export const AuthModule = {
       })
         .then((res) => {
           console.log(res)
-          console.log('asd')
           if (this.state.AuthModule.id_login != 0) {
             localStorage.id_login = this.state.AuthModule.id_login;
             commit("setLogged", true);
