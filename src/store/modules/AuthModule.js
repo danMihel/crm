@@ -1,4 +1,4 @@
-import AuthAPI from "@/AuthAPI/index"
+import API from "@/API/index"
 import router from "@/router";
 
 export const AuthModule = {
@@ -31,42 +31,30 @@ export const AuthModule = {
     },
     setLogged(state, bool) {
       state.logged = bool;
-      localStorage.logged = bool;
     },
     setIdLogin(state, id_login) {
       state.id_login = id_login;
     },
   },
-
   actions: {
-    LoginCheck() {
-      this.state.AuthModule.logged === true || localStorage.logged == "true"
-        ? router.push("/user")
-        : null;
-    },
-
     async onLogin({ commit }) {
       commit("setSpinner", false);
-      console.log(AuthAPI)
-      return AuthAPI.login({
+      console.log(API)
+      return API.login({
         login: this.state.AuthModule.login,
         password: this.state.AuthModule.password,
       })
         .then((res) => {
           console.log(res)
-          if (this.state.AuthModule.id_login != 0) {
-            localStorage.id_login = this.state.AuthModule.id_login;
+          if (res.data.accessToken.length > 0) {
+           sessionStorage.accessToken = res.data.accessToken;
             commit("setLogged", true);
             commit("setSpinner", true);
-            commit("setError", "");
-            router.push("/user");
-          } else {
-            this.state.AuthModule.errors = "Неверные логин или пароль";
-            commit("setSpinner", true);
+            router.push("/company");
           }
         })
         .catch((error) => {
-          AuthAPI.errorHandler(error.response.status);
+         API.errorHandler(error.response.status);
         })
         .finally(() => {
           commit("setSpinner", true);

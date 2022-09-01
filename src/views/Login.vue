@@ -51,16 +51,6 @@ export default {
       this.$store.dispatch("AuthModule/onLogin");
     },
   },
-  mounted() {
-    this.$store.dispatch("AuthModule/LoginCheck");
-    fetch("http://192.168.0.254:8080/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ login: this.login, password: this.password }),
-    })
-      .then((resp) => resp.text())
-      .then(console.log);
-  },
 };
 </script>
 <style>
