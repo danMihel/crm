@@ -1,4 +1,4 @@
-import { AuthAPI } from "@/API/AuthAPI";
+import AuthAPI from "@/AuthAPI/index"
 import router from "@/router";
 
 export const AuthModule = {
@@ -47,6 +47,7 @@ export const AuthModule = {
 
     async onLogin({ commit }) {
       commit("setSpinner", false);
+      console.log(AuthAPI)
       return AuthAPI.login({
         login: this.state.AuthModule.login,
         password: this.state.AuthModule.password,

@@ -1,19 +1,13 @@
-import { LoginAPIInstanse } from "@/API/index";
 import store from "@/store";
+import axios from "axios";
 
-export const AuthAPI = {
-  login(json) {
-    const url = "/login";
-    const params = { params: { json }, };
-    return LoginAPIInstanse.post(url, params);
-  },
-
-  profile(json) {
-    const url = "/test";
-    const params = { params: { json } };
-    return LoginAPIInstanse.get(url, params);
-  },
-
+export default {
+     async login(){ 
+      axios.post('http://192.168.0.254:8080/api/auth/login', {
+        login: 'admin', 
+        password:'admin'
+      }).then(res => (console.log(res)))
+    },
   errorHandler(error) {
     !error
       ? (store.state.AuthModule.errors = "Проверьте подключение к интернету")
