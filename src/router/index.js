@@ -26,7 +26,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if(to.name !== 'login' && store.state.isAuth === false) next( {name:'login'});
+  if(to.name !== 'login' && store.state.AuthModule.logged === false) next( {name:'login'});
   else next()
 })
 
