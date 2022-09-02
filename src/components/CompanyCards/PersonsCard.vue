@@ -34,7 +34,7 @@ export default {
 .person__header {
   font-weight: 600;
   font-size: 1.5rem;
-  background-color: #42b983;
+  background-color: #5e79ec;
   padding: 1rem;
   border: solid rgb(219, 217, 217) 1px 1px 1px 0;
 }
