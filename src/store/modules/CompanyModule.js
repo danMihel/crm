@@ -1,30 +1,30 @@
-import API from "@/API/index"
+import API from "@/API/index";
 
-export  const CompanyModule = {
-    namespaced: true,
-    actions: {
-        async getCompany({ commit }) {
-          commit("setSpinner", false);
-          console.log(API)
-          return API.login({
-            login: this.state.AuthModule.login,
-            password: this.state.AuthModule.password,
-          })
-            .then((res) => {
-              console.log(res)
-              if (res.data.accessToken.length > 0) {
-               sessionStorage.accessToken = res.data.accessToken;
-                commit("setLogged", true);
-                commit("setSpinner", true);
-                router.push("/user");
-              }
-            })
-            .catch((error) => {
-              AuthAPI.errorHandler(error.response.status);
-            })
-            .finally(() => {
-              commit("setSpinner", true);
-            });
-        },
-      },
-}
+export const CompanyModule = {
+  namespaced: true,
+  state() {
+    return {
+      company: {},
+      name: "",
+      inn: "",
+      kpp: "",
+      address: "",
+      address: "",
+      phoneNumber: "",
+      persons: [],
+    };
+  },
+  mutations: {
+    setCompany(state, data) {
+      state.company = data;
+    },
+  },
+  actions: {
+   async fetchCompany({ commit }) {
+      return API.getCompanies(1).then((res) => {
+        console.log(res.data)
+        commit("setCompany", res.data)
+      });
+    },
+  },
+};

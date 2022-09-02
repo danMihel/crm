@@ -39,13 +39,11 @@ export const AuthModule = {
   actions: {
     async onLogin({ commit }) {
       commit("setSpinner", false);
-      console.log(API)
       return API.login({
         login: this.state.AuthModule.login,
         password: this.state.AuthModule.password,
       })
         .then((res) => {
-          console.log(res)
           if (res.data.accessToken.length > 0) {
            sessionStorage.accessToken = res.data.accessToken;
             commit("setLogged", true);

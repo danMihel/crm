@@ -16,7 +16,8 @@ export default {
     const url = `/companies/${id}`;
     return axios.get(this.baseURL + url, {
       headers: {
-       'Authorization':`token ${ sessionStorage.accessToken}`},
+       'Authorization': `Bearer ${ sessionStorage.accessToken}`
+      }, 
     });
   },
   
