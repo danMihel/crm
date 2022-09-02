@@ -1,7 +1,4 @@
 <template>
-      <div class="company__main-title">
-        {{ this.$store.state.CompanyModule.company.name }}
-      </div>
         <div>
           <div class="company-data__header">Реквизиты</div>
           <div class="company-data-container">
@@ -47,10 +44,6 @@
     border-radius: 0px 0px 10px 10px;
     border: solid rgb(219, 217, 217) 1px;
     background-color: rgb(250, 250, 250);
-  }
-  .company__main-title {
-    font-weight: 600;
-    font-size: 1.5rem;
   }
   .company-data__header {
     font-weight: 600;
