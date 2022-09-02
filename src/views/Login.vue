@@ -21,10 +21,12 @@
       <div class="auth-card__aller">
         {{ this.$store.state.AuthModule.errors }}
       </div>
-      <button class="auth-card__button">
+      <div class="auth-card-btn-wraper">
+        <button class="auth-card__button">
         <span v-if="this.$store.state.AuthModule.isLoade === true">Войти</span>
         <div v-else class="auth-card__spinner"></div>
       </button>
+      </div>
     </form>
   </div>
 </template>
@@ -112,13 +114,17 @@ export default {
   transition: 0.2s linear;
 }
 
+.auth-card-btn-wraper{
+  display: flex;
+  justify-content: center;
+}
+
 .auth-card__button {
   height: 46px;
   width: 70%;
   border: none;
   border-radius: 5px;
   background-color: #5e79ec;
-  margin-bottom: 15px;
   color: azure;
   font-size: 1.2rem;
 }

@@ -8,8 +8,8 @@
         :key="item.id">
         <div class="person-name no-text-wrap">{{ item.person }}</div>
         <div class="person-data">{{ item.position }}</div>
-        <div class="person-data">{{ item.phone }} +79555222552</div>
-        <div class="person-data">{{ item.email }} kjasfasfs@jasfaiunas.com</div>
+        <div class="person-data">{{ item.phone }} </div>
+        <div class="person-data">{{ item.email }} </div>
       </div>
     </div>
   </div>

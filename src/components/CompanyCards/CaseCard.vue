@@ -5,7 +5,8 @@
       <div
         class="case-element"
         v-for="item in $store.state.CompanyModule.company.cases"
-        :key="item.id">
+        :key="item.id"
+      >
         <div class="case-number">{{ item.number }}</div>
         <div class="case-name">{{ item.description }}</div>
       </div>
@@ -24,6 +25,12 @@ export default {
   background-color: #42b983;
   padding: 1rem;
   border: solid rgb(219, 217, 217) 1px 1px 1px 0;
+}
+.case-container {
+  padding: 30px;
+  border-radius: 0px 0px 10px 10px;
+  border: solid rgb(219, 217, 217) 1px;
+  background-color: rgb(250, 250, 250);
 }
 .case-element {
   display: flex;
