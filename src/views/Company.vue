@@ -20,21 +20,4 @@ export default {
   },
 };
 </script>
-<style>
-.compant-master-container {
-  margin: auto 1rem ;  
-}
-.company-name-wraper {
-  display: flex;
-  justify-content: center;
-}
-.company-card-wraper {
-  margin-top: 2rem;
-}
-.persons-card-wraper {
-  margin-top: 2rem;
-}
-.case-card-wraper {
-  margin-top: 2rem;
-}
-</style>
+
