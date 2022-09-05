@@ -1,5 +1,4 @@
 import API from "@/API/index";
-import router from "@/router";
 
 export const CompanyModule = {
   namespaced: true,
