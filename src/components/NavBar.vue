@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/company">User</router-link>
+    <router-link to="/">Главная</router-link>
+    <router-link to="/company">Компании</router-link>
   </nav>
 </template>
 <script>

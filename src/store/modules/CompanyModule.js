@@ -1,4 +1,5 @@
 import API from "@/API/index";
+import router from "@/router";
 
 export const CompanyModule = {
   namespaced: true,
@@ -6,14 +7,9 @@ export const CompanyModule = {
     return {
       company: {},
       allCompanies: {},
-      vueCompany: 0,
     };
   },
   mutations: {
-    setVueCompany(state, data){
-      state.vueCompany = data
-      console.log(state.vueCompany)
-    },
     setCompany(state, data) {
       state.company = data;
     },
@@ -22,15 +18,13 @@ export const CompanyModule = {
     },
   },
   actions: {
-   async fetchCompany({ commit, state }) {
-      return API.getCompanies(state.vueCompany).then((res) => {
-        console.log(res.data)
+   async fetchIdCompany({ commit}, id ) {
+      return API.getCompanies(id).then((res) => {
         commit("setCompany", res.data)
       });
     },
     async fetchAllCompanies({ commit }) {
       return API.getCompanies().then((res) => {
-        console.log(res.data.page)
         commit("setAllCompanies", res.data.page)
       });
     },

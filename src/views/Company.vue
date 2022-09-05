@@ -1,14 +1,8 @@
 <template>
   <NavBar />
-  <div class="compant-master-container" v-if="this.$store.state.CompanyModule.company.length === 0">
-    <div class="company-name-wraper"><CompanyNameCard /></div>
-    <div class="company-card-wraper"><CompanyCard /></div>
-    <div class="persons-card-wraper"><PersonsCard /></div>
-    <div class="case-card-wraper"><CaseCard /></div>
-  </div>
-  <div v-else>
+  <div>
     <div v-for="item in this.$store.state.CompanyModule.allCompanies" :key="item.id"> 
-     <p @click="openCompany(item.id)">{{item.name}}</p>
+     <p @click="$router.push(`/company/${item.id}`)">{{item.name}}</p>
     </div>
   </div>
 </template>
@@ -21,12 +15,6 @@ import CompanyNameCard from "@/components/CompanyCards/CompanyNameCard.vue";
 export default {
   name: "user",
   components: { NavBar, CompanyCard, PersonsCard, CaseCard, CompanyNameCard },
-  methods:{
-    async openCompany(i){
-      await this.$store.commit("CompanyModule/setVueCompany", i);
-      await this.$store.dispatch("CompanyModule/fetchCompany");
-    }
-  },
   mounted() {
     this.$store.dispatch("CompanyModule/fetchAllCompanies");
   },
