@@ -2,8 +2,7 @@
   <NavBar />
   <div>
     <div
-      v-for="item in this.$store.state.ClientModule.allClients"
-      :key="item.id">
+      v-for="item in this.$store.state.ClientModule.allClients" :key="item.id">
       <p @click="$router.push(`/client/${item.id}`)">{{ item.name }}</p>
     </div>
   </div>
