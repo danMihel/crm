@@ -12,8 +12,17 @@ export default {
     });
   },
 
-  async getCompanies(id=''){
+  async getCompanies(id = ''){
     const url = `/companies/${id}`;
+    return axios.get(this.baseURL + url, {
+      headers: {
+       'Authorization': `Bearer ${ sessionStorage.accessToken}`
+      }, 
+    });
+  },
+
+  async getClients(id = ''){
+    const url = `/persons/${id}`;
     return axios.get(this.baseURL + url, {
       headers: {
        'Authorization': `Bearer ${ sessionStorage.accessToken}`

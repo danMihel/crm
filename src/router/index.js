@@ -21,8 +21,13 @@ const routes = [
   {
     path: '/company/:id',
     name: 'vue-company',
-     component: () => import('@/views/VueCompany.vue')
-  }
+     component: () => import('@/views/SpecCompany.vue')
+  },
+  {
+    path: '/clients',
+    name: 'clients',
+     component: () => import('@/views/Clients.vue')
+  },
 ]
 
 const router = createRouter({
@@ -30,9 +35,9 @@ const router = createRouter({
   routes
 })
 
-/* router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   if(to.name !== 'login' && store.state.AuthModule.logged === false) next( {name:'login'});
   else next()
-}) */
+})
 
 export default router

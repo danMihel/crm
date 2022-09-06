@@ -5,7 +5,7 @@ export const CompanyModule = {
   state() {
     return {
       company: {},
-      allCompanies: {},
+      allCompanies: [],
     };
   },
   mutations: {

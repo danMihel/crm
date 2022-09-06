@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import { AuthModule } from "@/store/modules/AuthModule";
-import {CompanyModule} from '@/store/modules/CompanyModule'
+import { CompanyModule } from '@/store/modules/CompanyModule';
+import { ClientModule } from './modules/ClientModule';
 
 
 export default createStore({
@@ -15,5 +16,6 @@ export default createStore({
   modules: {
     AuthModule,
     CompanyModule,
+    ClientModule,
   }
 })
