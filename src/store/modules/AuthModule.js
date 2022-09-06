@@ -48,7 +48,7 @@ export const AuthModule = {
            sessionStorage.accessToken = res.data.accessToken;
             commit("setLogged", true);
             commit("setSpinner", true);
-            router.push("/company");
+            router.push("/");
           }
         })
         .catch((error) => {
