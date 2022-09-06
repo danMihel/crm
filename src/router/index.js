@@ -33,6 +33,11 @@ const routes = [
     name: 'spec-client',
      component: () => import('@/views/SpecClient.vue')
   },
+  {
+    path: '/contract',
+    name: 'contract',
+     component: () => import('@/views/Contract.vue')
+  },
 ]
 
 const router = createRouter({

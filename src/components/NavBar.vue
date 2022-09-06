@@ -3,6 +3,7 @@
     <router-link to="/">Главная</router-link>
     <router-link to="/company">Компании</router-link>
     <router-link to="/client">Клиенты</router-link>
+    <router-link to="/contract">Договоры</router-link>
   </nav>
 </template>
 <script>
