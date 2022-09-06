@@ -5,7 +5,7 @@
       v-for="item in this.$store.state.ClientModule.allClients"
       :key="item.id"
     >
-      <p>{{ item.name }}</p>
+      <p @click="$router.push(`/client/${item.id}`)">{{ item.name }}</p>
     </div>
   </div>
 </template>

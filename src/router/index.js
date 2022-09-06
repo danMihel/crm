@@ -20,13 +20,18 @@ const routes = [
   },
   {
     path: '/company/:id',
-    name: 'vue-company',
+    name: 'spec-company',
      component: () => import('@/views/SpecCompany.vue')
   },
   {
-    path: '/clients',
-    name: 'clients',
+    path: '/client',
+    name: 'client',
      component: () => import('@/views/Clients.vue')
+  },
+  {
+    path: '/client/:id',
+    name: 'spec-client',
+     component: () => import('@/views/SpecClient.vue')
   },
 ]
 
