@@ -4,7 +4,7 @@
     <div class="case-container">
       <div
         class="case-element"
-        v-for="item in $store.state.CompanyModule.company.cases"
+        v-for="item in cases"
         :key="item.id"
       >
         <div class="case-number">{{ item.number }}</div>
@@ -14,8 +14,14 @@
   </div>
 </template>
 <script>
+  import { mapState } from 'vuex';
 export default {
   name: "case-card",
+  computed: {
+      ...mapState({
+        cases: (state) => state.CompanyModule.company.cases,
+      }),
+    },
 };
 </script>
 <style>

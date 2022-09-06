@@ -4,7 +4,7 @@
     <div class="person-container">
       <div
         class="person-element"
-        v-for="item in $store.state.CompanyModule.company.persons"
+        v-for="item in persons"
         :key="item.id">
         <div class="person-name no-text-wrap">{{ item.person }}</div>
         <div class="person-data">{{ item.position }}</div>
@@ -15,8 +15,14 @@
   </div>
 </template>
 <script>
+  import { mapState } from 'vuex';
 export default {
   name: "persons-card",
+  computed: {
+      ...mapState({
+        persons: (state) => state.CompanyModule.company.persons,
+      }),
+    },
 };
 </script>
 <style>

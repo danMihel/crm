@@ -19,11 +19,13 @@ export const CompanyModule = {
   actions: {
    async fetchIdCompany({ commit}, id ) {
       return API.getCompanies(id).then((res) => {
+        console.log(res.data)
         commit("setCompany", res.data)
       });
     },
     async fetchAllCompanies({ commit }) {
       return API.getCompanies().then((res) => {
+        console.log(res.data)
         commit("setAllCompanies", res.data.page)
       });
     },
