@@ -1,9 +1,10 @@
 <template>
   <NavBar />
   <div class="company-name-wraper"><CompanyNameCard /></div>
-  <div class="company-card-wraper"><CompanyCard /></div>
-  <div class="persons-card-wraper"><CompanyPersonsCard /></div>
-  <div class="case-card-wraper"><CompanyCaseCard/></div>
+  <div class="company-item-wraper"><CompanyCard /></div>
+  <div class="company-item-wraper"><CompanyPersonsCard /></div>
+  <div class="company-item-wraper"><CompanyCaseCard/></div>
+  <div class="company-item-wraper"><CompanyContractCard/></div>
 </template>
 <script>
 import CompanyCard from "@/components/CompanyCards/CompanyCard.vue";
@@ -11,9 +12,10 @@ import CompanyPersonsCard from "@/components/CompanyCards/CompanyPersonsCard.vue
 import CompanyCaseCard from "@/components/CompanyCards/CompanyCaseCard.vue";
 import CompanyNameCard from "@/components/CompanyCards/CompanyNameCard.vue";
 import NavBar from "@/components/NavBar.vue";
+import CompanyContractCard from "@/components/CompanyCards/CompanyContractCard.vue";
 export default {
   name: "spec-company",
-  components: { CompanyCard, CompanyPersonsCard, CompanyCaseCard, CompanyNameCard, NavBar },
+  components: { CompanyCard, CompanyPersonsCard, CompanyCaseCard, CompanyNameCard, NavBar, CompanyContractCard },
   mounted() {
     this.$store.dispatch("CompanyModule/fetchIdCompany", this.$route.params.id);
   },
@@ -27,13 +29,7 @@ export default {
       display: flex;
       justify-content: center;
     }
-    .company-card-wraper {
-      margin-top: 2rem;
-    }
-    .persons-card-wraper {
-      margin-top: 2rem;
-    }
-    .case-card-wraper {
+    .company-item-wraper {
       margin-top: 2rem;
     }
     </style>
