@@ -18,6 +18,12 @@ export const ClientModule = {
     setAllClients(state, data) {
       state.allClients = data;
     },
+    setTotlaPages(state, data) {
+      state.totalPages = data;
+    },
+    setItemsPerPages(state, data) {
+      state.itemsPerPage = data;
+    },
   },
   actions: {
     async fetchIdClient({ commit}, id,) {

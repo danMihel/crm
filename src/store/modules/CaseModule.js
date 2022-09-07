@@ -18,6 +18,12 @@ export const CaseModule = {
     setAllCases(state, data) {
       state.allCases = data;
     },
+    setTotlaPages(state, data) {
+      state.totalPages = data;
+    },
+    setItemsPerPages(state, data) {
+      state.itemsPerPage = data;
+    },
   },
   actions: {
     async fetchIdCase({ commit }, id) {
