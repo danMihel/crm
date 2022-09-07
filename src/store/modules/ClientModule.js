@@ -18,14 +18,15 @@ export const ClientModule = {
   },
   actions: {
     async fetchIdClient({ commit}, id,) {
-      const url = 'persons'
+      const url = '/persons'
       return API.getElement(id, url).then((res) => {
+        console.log(res.data)
         commit("setClient", res.data)
       });
     },
 
     async fetchAllClients({ commit }) {
-      const url = 'persons'
+      const url = '/persons'
       return API.getElement('', url).then((res) => {
         commit("setAllClients", res.data.page);
       });

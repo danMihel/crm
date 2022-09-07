@@ -13,7 +13,7 @@ export default {
   },
 
   async getElement(id = '', url = ''){
-    return axios.get(this.baseURL + `/${url}/${id}`, {
+    return axios.get(this.baseURL + `${url}/${id}`, {
       headers: {
        'Authorization': `Bearer ${ sessionStorage.accessToken}`
       }, 

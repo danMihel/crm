@@ -3,17 +3,17 @@
     <div class="person__header">Контактные лица</div>
     <div class="person-container">
       <div v-for="item in persons" :key="item.id">
-        <CompanyPersone :person="item" :key="item.id"/>
+        <Persone :person="item" :key="item.id"/>
       </div>
     </div>
   </div>
 </template>
 <script>
   import { mapState } from 'vuex';
-  import CompanyPersone from '@/components/CompanyCards/CompanyPersone.vue';
+  import Persone from '@/components/ForAllCards/Persone.vue';
 export default {
   name: "persons-card",
-  components: { CompanyPersone },
+  components: { Persone },
   computed: {
       ...mapState({
         persons: (state) => state.CompanyModule.company.persons,

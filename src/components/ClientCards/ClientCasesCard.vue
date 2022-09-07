@@ -15,7 +15,7 @@ export default {
     name: "client-cases",
     computed: {
         ...mapState({
-            cases: (state) => state.ClientModule.client.cases,
+          cases: (state) => state.ClientModule.client.cases,
         }),
     },
     components: { Case }

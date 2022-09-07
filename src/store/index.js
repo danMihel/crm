@@ -1,9 +1,9 @@
 import { createStore } from 'vuex'
 import { AuthModule } from "@/store/modules/AuthModule";
 import { CompanyModule } from '@/store/modules/CompanyModule';
-import { ClientModule } from './modules/ClientModule';
-import { ContractModule } from './modules/ContractModule';
-
+import { ClientModule } from '@/store/modules/ClientModule';
+import { ContractModule } from '@/store/modules/ContractModule';
+import { CaseModule } from '@/store/modules/CaseModule';
 
 export default createStore({
   state: {
@@ -19,5 +19,6 @@ export default createStore({
     CompanyModule,
     ClientModule,
     ContractModule, 
+    CaseModule,
   }
 })

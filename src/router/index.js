@@ -43,6 +43,16 @@ const routes = [
     name: 'spec-contract',
      component: () => import('@/views/SpecContract.vue')
   },
+  {
+    path: '/case',
+    name: 'case',
+     component: () => import('@/views/Case.vue')
+  },
+  {
+    path: '/case/:id',
+    name: 'spec-case',
+     component: () => import('@/views/SpecCase.vue')
+  },
 ]
 
 const router = createRouter({

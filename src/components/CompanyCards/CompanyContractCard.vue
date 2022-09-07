@@ -1,21 +1,22 @@
 <template>
   <div class="contract__header">Договоры</div>
   <div class="contract-container">
-    <div v-for="contract in contracts" :key="contract.id">
-        sds
-      {{contract.number}}
+    <div v-for="item in contracts" :key="item.id">
+      <Contract :contract ="item"/>
     </div>
   </div>
 </template>
 <script>
      import { mapState } from 'vuex';
+import Contract from '../ForAllCards/Contract.vue';
 export default {
-  name: "company-contract,",
-  computed: {
-      ...mapState({
-        contracts: (state) => state.CompanyModule.company.contracts,
-      }),
-    }
+    name: "company-contract,",
+    computed: {
+        ...mapState({
+            contracts: (state) => state.CompanyModule.company.contracts,
+        }),
+    },
+    components: { Contract }
 };
 </script>
 <style scoped>
