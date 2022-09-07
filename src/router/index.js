@@ -26,7 +26,7 @@ const routes = [
   {
     path: '/client',
     name: 'client',
-     component: () => import('@/views/Clients.vue')
+     component: () => import('@/views/Client.vue')
   },
   {
     path: '/client/:id',
@@ -37,6 +37,11 @@ const routes = [
     path: '/contract',
     name: 'contract',
      component: () => import('@/views/Contract.vue')
+  },
+  {
+    path: '/contract/:id',
+    name: 'spec-contract',
+     component: () => import('@/views/SpecContract.vue')
   },
 ]
 

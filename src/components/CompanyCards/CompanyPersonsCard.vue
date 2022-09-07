@@ -2,7 +2,7 @@
   <div>
     <div class="person__header">Контактные лица</div>
     <div class="person-container">
-      <div  v-for="item in persons" :key="item.id">
+      <div v-for="item in persons" :key="item.id">
         <CompanyPersone :person="item" :key="item.id"/>
       </div>
     </div>

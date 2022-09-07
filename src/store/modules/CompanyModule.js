@@ -17,14 +17,16 @@ export const CompanyModule = {
     },
   },
   actions: {
-   async fetchIdCompany({ commit}, id ) {
-      return API.getCompanies(id).then((res) => {
-        commit("setCompany", res.data)
+    async fetchIdCompany({ commit }, id) {
+      const url = "companies";
+      return API.getElement(id, url).then((res) => {
+        commit("setCompany", res.data);
       });
     },
     async fetchAllCompanies({ commit }) {
-      return API.getCompanies().then((res) => {
-        commit("setAllCompanies", res.data.page)
+      const url = "companies";
+      return API.getElement("", url).then((res) => {
+        commit("setAllCompanies", res.data.page);
       });
     },
   },

@@ -17,14 +17,16 @@ export const ClientModule = {
     },
   },
   actions: {
-    async fetchIdClient({ commit}, id ) {
-      return API.getClients(id).then((res) => {
+    async fetchIdClient({ commit}, id,) {
+      const url = 'persons'
+      return API.getElement(id, url).then((res) => {
         commit("setClient", res.data)
       });
     },
 
     async fetchAllClients({ commit }) {
-      return API.getClients().then((res) => {
+      const url = 'persons'
+      return API.getElement('', url).then((res) => {
         commit("setAllClients", res.data.page);
       });
     },
