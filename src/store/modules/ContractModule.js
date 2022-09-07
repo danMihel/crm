@@ -6,6 +6,9 @@ export const ContractModule = {
     return {
       contract: {},
       allContracts: [],
+      totalPages:'',
+      currentPage: 1,
+      itemsPerPage: 5,
     };
   },
   mutations: {

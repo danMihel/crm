@@ -4,8 +4,11 @@ export const CaseModule = {
   namespaced: true,
   state() {
     return {
-        case: {},
+      case: {},
       allCases: [],
+      totalPages: "",
+      currentPage: 1,
+      itemsPerPage: 5,
     };
   },
   mutations: {
@@ -17,17 +20,16 @@ export const CaseModule = {
     },
   },
   actions: {
-    async fetchIdCase({ commit}, id,) {
-      const url = '/cases'
+    async fetchIdCase({ commit }, id) {
+      const url = "/cases";
       return API.getElement(id, url).then((res) => {
-        commit("setCase", res.data)
+        commit("setCase", res.data);
       });
     },
 
     async fetchAllCases({ commit }) {
-      const url = '/cases'
-      return API.getElement('', url).then((res) => {
-        console.log(res.data.page)
+      const url = "/cases";
+      return API.getElement("", url).then((res) => {
         commit("setAllCases", res.data.page);
       });
     },

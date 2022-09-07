@@ -6,7 +6,7 @@ export const CompanyModule = {
     return {
       company: {},
       allCompanies: [],
-      totalPages:'',
+      totalPages: "",
       currentPage: 1,
       itemsPerPage: 5,
     };
@@ -18,12 +18,12 @@ export const CompanyModule = {
     setAllCompanies(state, data) {
       state.allCompanies = data;
     },
-    setTotlaPages(state, data){
-      state.totalPages = data
+    setTotlaPages(state, data) {
+      state.totalPages = data;
     },
-    setItemsPerPages(state, data){
-      state.itemsPerPage = data
-    }
+    setItemsPerPages(state, data) {
+      state.itemsPerPage = data;
+    },
   },
   actions: {
     async fetchIdCompany({ commit }, id) {
@@ -32,7 +32,11 @@ export const CompanyModule = {
         commit("setCompany", res.data);
       });
     },
-    async fetchAllCompanies({ commit, state }, page = 1, items = state.itemsPerPage) {
+    async fetchAllCompanies(
+      { commit, state },
+      page = 1,
+      items = state.itemsPerPage
+    ) {
       const url = `/companies/${page}/${items}`;
       return API.getElement("", url).then((res) => {
         commit("setAllCompanies", res.data.page);

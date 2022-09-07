@@ -1,9 +1,10 @@
 <template>
   <NavBar />
   <div v-for="item in this.$store.state.CaseModule.allCases" :key="item.id">
-    <div @click="$router.push(`/cases/${item.id}`)">
-      <p>{{ item.startDate }}</p>
+    <div @click="$router.push(`/case/${item.id}`)">
+      <p>{{ item.number }}</p>
       <p>{{ item.description }}</p>
+      <p>{{ item.id }}</p>
     </div>
   </div>
 </template>
