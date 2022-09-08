@@ -2,18 +2,26 @@
   <NavBar />
   <div class="wraper">
     <h2>Все клиенты</h2>
-  <div class="list-group"  v-for="item in this.$store.state.ClientModule.allClients" :key="item.id">
-      <div class="list-group-item" @click="$router.push(`/client/${item.id}`)">{{ item.name }}</div>
-  </div>
-  <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
-  <div> Вывести на старинцу:
-    <select @change="setItems($event)">
-    <option value="" disabled selected>{{itemsPerPage}}</option>
-    <option value="5">5</option>
-    <option value="10">10</option>
-    <option value="15">15</option>
-  </select>
-  </div>
+    <div class="list-group-wraper">
+      <div class="list-group"
+        v-for="item in this.$store.state.ClientModule.allClients"
+        :key="item.id">
+        <div class="list-group-item"
+          @click="$router.push(`/client/${item.id}`)">
+          {{ item.name }}
+        </div>
+      </div>
+    </div>
+      <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
+      <div>
+        Вывести на старинцу:
+        <select @change="setItems($event)">
+          <option value="" disabled selected>{{ itemsPerPage }}</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+        </select>
+      </div>
   </div>
 </template>
 <script>
@@ -33,7 +41,7 @@ export default {
     ...mapState({
       totalPages: (state) => state.ClientModule.totalPages,
       allCompanies: (state) => state.ClientModule.allCompanies,
-      itemsPerPage: (state) => state.ClientModule.itemsPerPage
+      itemsPerPage: (state) => state.ClientModule.itemsPerPage,
     }),
   },
   methods: {
@@ -43,9 +51,9 @@ export default {
     },
     setItems(event) {
       (this.items = event.target.value),
-      this.$store.commit("ClientModule/setItemsPerPages", this.items);
-      this.$store.dispatch("ClientModule/fetchAllClients", 1,  this.items);
-      this.page = 1
+        this.$store.commit("ClientModule/setItemsPerPages", this.items);
+      this.$store.dispatch("ClientModule/fetchAllClients", 1, this.items);
+      this.page = 1;
     },
   },
   mounted() {
@@ -53,6 +61,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

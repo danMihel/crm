@@ -1,7 +1,9 @@
 <template>
-    <div class="person-element" @click="$router.push(`/client/${person.id}`)">
+    <div class="person" @click="$router.push(`/client/${person.id}`)">
       <div class="person-name no-text-wrap">{{ person.person }}</div>
       <div class="person-data">{{ person.position }}</div>
+      <div class="person-data">sdsdgsd@sdgsdg.dsfk</div>
+      <div class="person-data">557755884</div>
     </div>
   </template>
   <script>
@@ -15,20 +17,16 @@
     },
   };
   </script>
-  <style>
-  .person-element {
-    display: flex;
-    padding: 1rem;
-    align-items: center;
-  }
-  .person-element:not(:last-child) {
-    border-bottom: 1px solid rgb(117, 117, 117);
+  <style scoped>
+  .person{
+  padding: 30px;
+  border: solid rgb(219, 217, 217) 1px;
   }
   .person-name {
     font-weight: 600;
   }
   .person-data {
-    margin-left: 3rem;
+    font-size: 0.8rem;
   }
   .no-text-wrap {
     white-space: nowrap;

@@ -1,15 +1,12 @@
 <template>
   <NavBar />
-  <div
-    v-for="item in this.$store.state.ContractModule.allContracts"
-    :key="item.id"
-  >
+  <div v-for="item in this.$store.state.ContractModule.allContracts"
+    :key="item.id">
     <div @click="$router.push(`/contract/${item.id}`)">
       Дата: {{ item.date }} / Номер: {{ item.number }} / Описание:
       {{ item.description }}
     </div>
   </div>
-
   <div
     v-for="pageNumber in this.$store.state.CompanyModule.totalPages"
     :key="pageNumber"

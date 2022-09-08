@@ -1,9 +1,11 @@
 <template>
     <NavBar/>
+    <div class="wraper">
     <ClientNameCard/>
     <ClientCompanyCard/>
     <ClientCasesCard/>
     <ClientContractCard/>
+    </div>
 </template>
 <script>
 import NavBar from "@/components/NavBar.vue";

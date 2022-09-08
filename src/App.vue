@@ -13,7 +13,11 @@ h2{
   text-align: center;
 }
 .wraper{
-  padding: 0 1rem;
+  margin-left: 7rem;
+  padding: 1rem;
+}
+.list-group-wraper {
+  min-height: 50vh;
 }
 .list-group {
   margin: 1rem 0;
@@ -29,4 +33,5 @@ h2{
   color: azure;
   transition: 0.4 s ease;
 }
+
 </style>

@@ -2,20 +2,25 @@
   <NavBar />
   <div class="wraper">
     <h2>Все компании</h2>
-    <div class="list-group" v-for="item in allCompanies" :key="item.id">
-      <li class="list-group-item" @click="$router.push(`/company/${item.id}`)">
-        {{ item.name }}
-      </li>
-    </div>
-    <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
-    <div>
-      Вывести на старинцу:
-      <select @change="setItems($event)">
-        <option value="" disabled selected>{{ itemsPerPage }}</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-      </select>
+    <div class="list-group-wraper">
+      <div class="list-group" v-for="item in allCompanies" :key="item.id">
+        <li
+          class="list-group-item"
+          @click="$router.push(`/company/${item.id}`)"
+        >
+          {{ item.name }}
+        </li>
+      </div>
+      <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
+      <div>
+        Вывести на старинцу:
+        <select @change="setItems($event)">
+          <option value="" disabled selected>{{ itemsPerPage }}</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +61,6 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 
 </style>

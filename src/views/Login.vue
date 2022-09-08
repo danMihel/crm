@@ -65,11 +65,9 @@ export default {
   border: solid rgb(219, 217, 217) 1px;
   background-color: rgb(250, 250, 250);
 }
-
 .auth-card__title {
   font-size: 2rem;
 }
-
 .auth-card__input {
   width: 90%;
   height: 22px;
@@ -82,7 +80,6 @@ export default {
   cursor: pointer;
   transition: border 0.3s linear;
 }
-
 .auth-card__input:active,
 :hover,
 :focus {

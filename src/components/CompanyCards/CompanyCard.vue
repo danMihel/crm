@@ -47,7 +47,6 @@ export default {
 <style>
 .company-data-container {
   padding: 30px;
-  border-radius: 0px 0px 10px 10px;
   border: solid rgb(219, 217, 217) 1px;
   background-color: rgb(250, 250, 250);
 }
@@ -62,16 +61,16 @@ export default {
   display: flex;
   padding: 1rem;
   align-items: center;
+  justify-content: space-around;
 }
 .company-element:not(:last-child) {
   border-bottom: 1px solid rgb(117, 117, 117);
 }
 .company-element__title {
   font-weight: 600;
-  width: 50%;
 }
 .company-element__data {
-  width: 50%;
+  width: 20%;
 }
 .no-text-wrap {
   white-space: nowrap;
