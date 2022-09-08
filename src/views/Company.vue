@@ -5,6 +5,7 @@
     :key="item.id" >
     <p @click="$router.push(`/company/${item.id}`)">{{ item.name }}</p>
   </div>
+  
   <div v-for="pageNumber in this.$store.state.CompanyModule.totalPages" :key="pageNumber">
    <p @click="setPage(pageNumber)">{{ pageNumber }}</p> 
   </div>
