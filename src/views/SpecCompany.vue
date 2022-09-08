@@ -22,13 +22,6 @@ export default {
 };
 </script>
 <style>
-    .compant-master-container {
-      margin: auto 1rem ;  
-    }
-    .company-name-wraper {
-      display: flex;
-      justify-content: center;
-    }
     .company-item-wraper {
       margin-top: 2rem;
     }

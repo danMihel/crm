@@ -6,9 +6,9 @@ export const ClientModule = {
     return {
       client: {},
       allClients: [],
-      totalPages: 1,
+      totalPages: '',
       currentPage: 1,
-      itemsPerPage: 1,
+      itemsPerPage: 5,
     };
   },
   mutations: {
@@ -34,10 +34,13 @@ export const ClientModule = {
       });
     },
 
-    async fetchAllClients({ commit }) {
-      const url = '/persons'
-      return API.getElement('', url).then((res) => {
+    async fetchAllClients( { commit, state },
+      page = 1,
+      items = state.itemsPerPage) {
+      const url = `/persons/${page}/${items}`
+      return API.getElement("", url).then((res) => {
         commit("setAllClients", res.data.page);
+        commit("setTotlaPages", res.data.count);
       });
     },
   },

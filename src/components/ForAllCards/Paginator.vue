@@ -27,14 +27,16 @@ export default {
 <style scoped>
 .paginator-row {
   display: flex;
+  margin-bottom: 1rem;
 }
 .paginator-item{
     padding: 0.5rem;
+    cursor: pointer;
 }
  .active-page >.paginator-item {
     border: 1px solid rgba(102, 51, 153, 0.199);
 }
 .active-page {
-  color: red;
+  color:#5e79ec;
 }
 </style>

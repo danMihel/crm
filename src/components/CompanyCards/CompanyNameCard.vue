@@ -1,7 +1,5 @@
 <template>
-  <div class="company__main-title">
-    {{ companyName }}
-  </div>
+  <h2>{{ companyName }}</h2>
 </template>
 <script>
 import { mapState } from "vuex";

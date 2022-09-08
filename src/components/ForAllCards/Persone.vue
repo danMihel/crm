@@ -13,11 +13,6 @@
         require: true,
       },
     },
-    methods:{
-      openPerson(){
-          console.log(this.person.person, this.person.id)
-      }
-    }
   };
   </script>
   <style>

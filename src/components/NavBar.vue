@@ -15,7 +15,7 @@ export default {
 <style scoped>
 nav {
   display: flex;
-  background-color: black;
+  background-color:  #5e79ec;
   margin-bottom: 2rem;
   padding: 2rem;
 }
@@ -25,6 +25,6 @@ nav a {
   margin-left: 4rem;
 }
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: rgb(85, 85, 85);
 }
 </style>

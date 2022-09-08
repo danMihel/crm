@@ -1,8 +1,7 @@
 <template>
   <div
     class="client-company-element"
-    @click="$router.push(`/company/${company.id}`)"
-  >
+    @click="$router.push(`/company/${company.id}`)">
     <div class="client-company-name">{{ company.company }}</div>
     <div class="client-company-data">{{ company.position }}</div>
   </div>

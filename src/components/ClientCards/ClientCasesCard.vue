@@ -1,6 +1,6 @@
 <template>
  <div>
-    <div class="client-case__main-title">Дела</div>
+    <div class="client-case__main-title h2">Дела</div>
     <div class="client-case-container">
       <div class="client-case-element" v-for="item in cases" :key="item.id">
         <Case :case ="item"/>
@@ -23,8 +23,6 @@ export default {
 </script>
 <style scoped>
   .client-case__main-title {
-    font-weight: 600;
-    font-size: 1.5rem;
     background-color: #5e79ec;
     padding: 1rem;
     border: solid rgb(219, 217, 217) 1px 1px 1px 0;

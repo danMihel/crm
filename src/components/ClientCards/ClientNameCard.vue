@@ -1,8 +1,9 @@
 <template> 
-    <div class="client__main-title">
+    <h2>
       {{ client.firstName }} {{ client.lastName }}
-    </div>
+    </h2>
     <div> Телефон {{client.phoneNumber}}</div>
+    <div> Электронная почта {{client.email}}</div>
   </template>
   <script>
   import { mapState } from "vuex";
@@ -16,9 +17,6 @@
   };
   </script>
   <style scoped>
-  .client__main-title {
-    font-weight: 600;
-    font-size: 1.5rem;
-  }
+ 
   </style>
   
