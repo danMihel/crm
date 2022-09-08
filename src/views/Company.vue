@@ -1,43 +1,60 @@
 <template>
   <NavBar />
-  <div
-    v-for="item in this.$store.state.CompanyModule.allCompanies"
-    :key="item.id" >
-    <p @click="$router.push(`/company/${item.id}`)">{{ item.name }}</p>
+  <ul class="list-group" v-for="item in allCompanies" :key="item.id">
+    <li class="list-group-item" @click="$router.push(`/company/${item.id}`)">{{ item.name }}</li>
+  </ul>
+  <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
+  <div>
+    Вывести на старинцу:
+    <select @change="setItems($event)">
+    <option value="" disabled selected>{{itemsPerPage}}</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+  </select>
   </div>
-  
-  <div v-for="pageNumber in this.$store.state.CompanyModule.totalPages" :key="pageNumber">
-   <p @click="setPage(pageNumber)">{{ pageNumber }}</p> 
-  </div>
-  <div>  
-   <p @click="setItems(6)">Показывать по 6 </p> 
-   <p @click="setItems(10)">Показывать по 10 </p> 
-  </div>
+
 </template>
 <script>
+import { mapState } from "vuex";
 import NavBar from "@/components/NavBar.vue";
+import Paginator from "../components/ForAllCards/Paginator.vue";
 export default {
   name: "company",
   data() {
     return {
       page: 1,
-      items: 1,
+      items: 5,
     };
+  },
+  computed: {
+    ...mapState({
+      totalPages: (state) => state.CompanyModule.totalPages,
+      allCompanies: (state) => state.CompanyModule.allCompanies,
+      itemsPerPage: (state) => state.CompanyModule.itemsPerPage
+    }),
   },
   methods: {
     setPage(number) {
-      this.page = number,
-      this.$store.dispatch("CompanyModule/fetchAllCompanies", this.page );
+      (this.page = number),
+        this.$store.dispatch("CompanyModule/fetchAllCompanies", this.page);
     },
-    setItems(number) {
-      this.items = number,
+    setItems(event) {
+      (this.items = event.target.value),
       this.$store.commit("CompanyModule/setItemsPerPages", this.items);
-      this.$store.dispatch("CompanyModule/fetchAllCompanies", 1 );
+      this.$store.dispatch("CompanyModule/fetchAllCompanies", 1,  this.items);
+      this.page = 1
     },
   },
-  components: { NavBar },
+  components: { NavBar, Paginator },
   mounted() {
-    this.$store.dispatch("CompanyModule/fetchAllCompanies", this.page, this.items );
+    this.$store.dispatch("CompanyModule/fetchAllCompanies", this.page, 5 );
   },
 };
 </script>
+<style scoped>
+.list-group-item{
+  border-top: none;
+}
+
+</style>

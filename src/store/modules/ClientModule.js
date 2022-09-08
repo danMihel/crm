@@ -6,9 +6,9 @@ export const ClientModule = {
     return {
       client: {},
       allClients: [],
-      totalPages:'',
+      totalPages: 1,
       currentPage: 1,
-      itemsPerPage: 5,
+      itemsPerPage: 1,
     };
   },
   mutations: {

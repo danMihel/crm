@@ -12,7 +12,7 @@ export default {
   name: "nav-bar",
 };
 </script>
-<style>
+<style scoped>
 nav {
   display: flex;
   background-color: black;
