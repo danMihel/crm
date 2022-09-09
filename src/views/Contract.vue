@@ -15,6 +15,7 @@
           № {{ item.number }} От {{ item.date }} // {{ item.description }}
         </div>
       </div>
+    </div>
       <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
       <div>
         Вывести на старинцу:
@@ -25,7 +26,6 @@
           <option value="15">15</option>
         </select>
       </div>
-    </div>
   </div>
 </template>
 <script>

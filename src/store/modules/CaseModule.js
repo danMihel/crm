@@ -32,10 +32,13 @@ export const CaseModule = {
         commit("setCase", res.data);
       });
     },
-    async fetchAllCases({ commit }) {
-      const url = "/cases";
+    async fetchAllCases({ commit, state },
+      page = 1,
+      items = state.itemsPerPage) {
+      const url = `/cases/${page}/${items}`;
       return API.getElement("", url).then((res) => {
         commit("setAllCases", res.data.page);
+        commit("setTotlaPages", res.data.count);
       });
     },
   },

@@ -9,10 +9,10 @@
 </template>
 <script>
 import NavBar from "@/components/NavBar.vue";
-import personNameCard from "@/components/personCards/personNameCard.vue";
-import personCompanyCard from "@/components/personCards/personCompanyCard.vue";
-import personCasesCard from "@/components/personCards/personCasesCard.vue";
-import personContractCard from "@/components/personCards/personContractCard.vue";
+import personNameCard from "@/components/PersonCards/personNameCard.vue";
+import personCompanyCard from "@/components/PersonCards/personCompanyCard.vue";
+import personCasesCard from "@/components/PersonCards/personCasesCard.vue";
+import personContractCard from "@/components/PersonCards/personContractCard.vue";
 export default {
   name: "spec-person",
   components: {

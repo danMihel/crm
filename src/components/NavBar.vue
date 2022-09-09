@@ -2,13 +2,13 @@
   <nav class="nav-container">
     <div>
       <div class="nav-items">
-        <router-link to="/">Главная</router-link>
         <div>
+         <p><router-link to="/">Главная</router-link> </p>
           <p><router-link to="/company">Компании</router-link></p>
           <p><router-link to="/person">Персоны</router-link></p>
+          <p><router-link to="/contract">Договоры</router-link></p>
+         <p><router-link to="/case">Дела</router-link></p> 
         </div>
-        <router-link to="/contract">Договоры</router-link>
-        <router-link to="/case">Дела</router-link>
       </div>
     </div>
   </nav>
@@ -22,10 +22,10 @@ export default {
 .nav-items {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:flex-start;
   position: fixed;
   height: 100vh;
-  top:0;
+  top: 0;
   width: 5rem;
   padding: 10vh 1rem;
   background-color:#5e79ec;
