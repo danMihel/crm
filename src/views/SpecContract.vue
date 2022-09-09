@@ -1,28 +1,27 @@
 <template>
   <NavBar />
-  <div class="wraper"> 
+  <div class="wraper">
     <div>Описание:{{ contract.description }}</div>
-  <div>Дата:{{ contract.date }}</div>
-  <div>Стоимость:{{ contract.amount }}</div>
-  <div>
-    Компания:
-    <div v-for="company in contract.company" :key="company.id">
-      {{ company.name }}
+    <div>Дата:{{ contract.date }}</div>
+    <div>Стоимость:{{ contract.amount }}</div>
+    <div>
+      Компания:
+      <div v-for="company in contract.company" :key="company.id">
+        {{ company.name }}
+      </div>
     </div>
-  </div>
-  <div>
-    Клиенты:
-    <div v-for="client in contract.person" :key="client.id">
-      {{ client.person }}
+    <div>
+      Клиенты:
+      <div v-for="client in contract.person" :key="client.id">
+        {{ client.person }}
+      </div>
     </div>
-  </div>
-  <div>
-    Менеджер:
-    <div v-for="manager in contract.responsible" :key="manager.id">
-      {{ manager.name }}
+    <div>
+      Менеджер:
+      <div v-for="manager in contract.responsible" :key="manager.id">
+        {{ manager.name }}
+      </div>
     </div>
-  </div>
-
   </div>
 </template>
 <script>
