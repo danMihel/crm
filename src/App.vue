@@ -36,5 +36,9 @@ h2{
 .spec-item-wraper {
   margin: 2rem 0;
 }
+.paginator-select{
+  border: none;
+  outline: none;
+}
 
 </style>

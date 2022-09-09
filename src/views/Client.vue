@@ -15,7 +15,7 @@
       <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
       <div>
         Вывести на старинцу:
-        <select @change="setItems($event)">
+        <select class="paginator-select" @change="setItems($event)">
           <option value="" disabled selected>{{ itemsPerPage }}</option>
           <option value="5">5</option>
           <option value="10">10</option>
