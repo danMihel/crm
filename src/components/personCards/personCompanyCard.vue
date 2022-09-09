@@ -1,6 +1,9 @@
 <template>
     <div class="person-company_main-title">Связанные компании</div>
     <div class="person-company-container">
+      <div>
+          <AddBtn/>
+      </div>
       <div
         class="person-company-element"
         v-for="item in companies"
@@ -13,6 +16,7 @@
 <script>
 import { mapState } from "vuex";
 import Company from "@/components/ForAllCards/Company.vue";
+import AddBtn from "../UI/AddBtn.vue";
 export default {
   name: "person-company-card",
   computed: {
@@ -20,7 +24,7 @@ export default {
       companies: (state) => state.PersonModule.person.companies,
     }),
   },
-  components: { Company },
+  components: { Company, AddBtn },
 };
 </script>
 <style scoped>
