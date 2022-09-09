@@ -29,6 +29,7 @@ export const CaseModule = {
     async fetchIdCase({ commit }, id) {
       const url = "/cases";
       return API.getElement(id, url).then((res) => {
+        console.log(res.data)
         commit("setCase", res.data);
       });
     },

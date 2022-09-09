@@ -13,8 +13,8 @@ h2{
   text-align: center;
 }
 .wraper{
-  margin-left: 7rem;
-  padding: 1rem;
+  margin-left: 17rem;
+  padding: 1rem 5rem;
 }
 .list-group-wraper {
   min-height: 50vh;

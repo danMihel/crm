@@ -1,7 +1,7 @@
 <template>
-    <div class="contract-element" @click="$router.push(`/contract/${contract.id}`)">
-      <div class="contract-number">{{ this.contract.number }}</div>
-      <div class="contract-name">{{ this.contract.description }}</div>
+    <div class="list-group-item margin-top" @click="$router.push(`/contract/${contract.id}`)">
+      <span class="card-name">{{ this.contract.number }}</span>
+      <span class="card-data">{{ this.contract.description }}</span>
     </div>
 </template>
 <script>
@@ -17,19 +17,14 @@ export default {
 
 </script>
 <style scoped>
-.contract-name {
-font-weight: 600;
-margin-left: 1rem;
+.card-name {
+  font-weight: 600;
+  margin-left: 1rem;
 }
-.contract-data {
-margin-left: 3rem;
+.card-data {
+  margin-left: 3rem;
 }
-.contract-element {
-display: flex;
-padding: 1rem;
-align-items: center;
-}
-.contract-element:not(:last-child) {
-border-bottom: 1px solid rgb(117, 117, 117);
+.margin-top{
+  margin-top: 1rem;
 }
 </style>

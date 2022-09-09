@@ -1,5 +1,5 @@
 <template>
-    <div class="person" @click="$router.push(`/person/${person.id}`)">
+    <div class="person list-group-item" @click="$router.push(`/person/${person.id}`)">
       <div class="person-name no-text-wrap">{{ person.person }}</div>
       <div class="person-data">{{ person.position }}</div>
       <div class="person-data">sdsdgsd@sdgsdg.dsfk</div>

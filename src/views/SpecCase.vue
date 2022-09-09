@@ -1,7 +1,9 @@
 <template>
   <NavBar />
+  <div class="wraper">
   <div>Номер: {{ cases.number }}</div>
   <div>Описание: {{ cases.description }}</div>
+  </div>
 </template>
 <script>
 import NavBar from "@/components/NavBar.vue";

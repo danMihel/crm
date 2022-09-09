@@ -26,7 +26,7 @@ export default {
   position: fixed;
   height: 100vh;
   top: 0;
-  width: 5rem;
+  width: 15rem;
   padding: 10vh 1rem;
   background-color:#5e79ec;
 }

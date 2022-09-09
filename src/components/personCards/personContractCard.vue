@@ -1,12 +1,10 @@
 <template>
-    <div>
        <div class="person-case__main-title">Договоры</div>
        <div class="person-case-container">
-         <div class="person-case-element" v-for="item in contracts" :key="item.id">
+         <div v-for="item in contracts" :key="item.id">
            <Contract :contract ="item"/>
          </div>
        </div>
-     </div>
    </template>
    <script>
    import { mapState } from "vuex";

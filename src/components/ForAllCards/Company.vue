@@ -1,5 +1,5 @@
 <template>
-    <div class="company" @click="$router.push(`/company/${company.id}`)">
+    <div class="list-group-item margin-top" @click="$router.push(`/company/${company.id}`)">
       <div class="company-name no-text-wrap">{{ company.company }}</div>
       <div class="company-data">{{ company.position }}</div>
     </div>
@@ -29,4 +29,6 @@
   .no-text-wrap {
     white-space: nowrap;
   }
-  </style>
+  .margin-top{
+  margin-top: 1rem;
+}  </style>

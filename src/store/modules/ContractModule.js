@@ -29,7 +29,6 @@ export const ContractModule = {
     async fetchIdContract({ commit }, id) {
       const url = "/contracts";
       return API.getElement(id, url).then((res) => {
-        console.log(res.data)
         commit("setContract", res.data);
       });
     },

@@ -70,7 +70,7 @@ export default {
   font-weight: 600;
 }
 .company-element__data {
-  width: 20%;
+  width: 50%;
 }
 .no-text-wrap {
   white-space: nowrap;

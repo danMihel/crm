@@ -1,7 +1,7 @@
 <template>
-      <div class="case-element">
-        <div class="case-number">{{ this.case.number }}</div>
-        <div class="case-name">{{ this.case.description }}</div>
+      <div class="list-group-item margin-top" @click="$router.push(`/case/${this.case.id}`)">
+        <span class="card-name">{{ this.case.number }}</span> 
+        <span class="card-data">{{ this.case.description }}</span>
       </div>
 </template>
 <script>
@@ -17,19 +17,15 @@ export default {
 
 </script>
 <style scoped>
-.case-name {
+.card-name {
   font-weight: 600;
   margin-left: 1rem;
 }
-.person-data {
+.card-data {
   margin-left: 3rem;
 }
-.case-element {
-  display: flex;
-  padding: 1rem;
-  align-items: center;
+.margin-top{
+  margin-top: 1rem;
 }
-.case-element:not(:last-child) {
-  border-bottom: 1px solid rgb(117, 117, 117);
-}
+
 </style>

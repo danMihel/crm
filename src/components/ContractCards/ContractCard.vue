@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="company-data__header">Договор № {{ contract.number }}</div>
+    <h2>Договор № {{ contract.number }}</h2>
     <div class="company-data-container">
       <div class="company-element">
         <div class="company-element__title">Дата заключения</div>
