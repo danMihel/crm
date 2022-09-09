@@ -33,5 +33,8 @@ h2{
   color: azure;
   transition: 0.4 s ease;
 }
+.spec-item-wraper {
+  margin: 2rem 0;
+}
 
 </style>

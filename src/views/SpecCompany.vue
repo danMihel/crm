@@ -1,11 +1,11 @@
 <template>
   <NavBar />
   <div class="wraper">
-    <div class="company-item-wraper"><CompanyNameCard /></div>
-      <div class="company-item-wraper"><CompanyCard /></div>
-      <div class="company-item-wraper"><CompanyPersonsCard /></div>
-      <div class="company-item-wraper"><CompanyContractCard /></div>
-      <div class="company-item-wraper"><CompanyCaseCard /></div>
+    <div class="spec-item-wraper"><CompanyNameCard /></div>
+      <div class="spec-item-wraper"><CompanyCard /></div>
+      <div class="spec-item-wraper"><CompanyPersonsCard /></div>
+      <div class="spec-item-wraper"><CompanyContractCard /></div>
+      <div class="spec-item-wraper"><CompanyCaseCard /></div>
   </div>
 </template>
 <script>
@@ -31,12 +31,5 @@ export default {
 };
 </script>
 <style scoped>
-.company-item-wraper {
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-.company-container {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 </style>

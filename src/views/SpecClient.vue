@@ -1,10 +1,10 @@
 <template>
     <NavBar/>
     <div class="wraper">
-    <ClientNameCard/>
-    <ClientCompanyCard/>
-    <ClientCasesCard/>
-    <ClientContractCard/>
+    <div class="spec-item-wraper"><ClientNameCard/></div>
+    <div class="spec-item-wraper"><ClientCompanyCard/></div>
+    <div class="spec-item-wraper"><ClientCasesCard/></div>
+    <div class="spec-item-wraper"><ClientContractCard/></div>
     </div>
 </template>
 <script>

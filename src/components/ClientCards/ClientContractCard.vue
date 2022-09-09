@@ -31,7 +31,6 @@
      }
      .client-case-container {
        padding: 30px;
-       border-radius: 0px 0px 10px 10px;
        border: solid rgb(219, 217, 217) 1px;
        background-color: rgb(250, 250, 250);
      }
