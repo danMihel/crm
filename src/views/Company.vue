@@ -4,10 +4,8 @@
     <h2>Все компании</h2>
     <div class="list-group-wraper">
       <div class="list-group" v-for="item in allCompanies" :key="item.id">
-        <li
-          class="list-group-item"
-          @click="$router.push(`/company/${item.id}`)"
-        >
+        <li class="list-group-item"
+          @click="$router.push(`/company/${item.id}`)">
           {{ item.name }}
         </li>
       </div>
@@ -43,6 +41,7 @@ export default {
       itemsPerPage: (state) => state.CompanyModule.itemsPerPage,
     }),
   },
+  components: { NavBar, Paginator },
   methods: {
     setPage(number) {
       (this.page = number),
@@ -55,7 +54,6 @@ export default {
       this.page = 1;
     },
   },
-  components: { NavBar, Paginator },
   mounted() {
     this.$store.dispatch("CompanyModule/fetchAllCompanies", this.page, 5);
   },

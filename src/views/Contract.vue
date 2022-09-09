@@ -1,45 +1,67 @@
 <template>
   <NavBar />
-  <div v-for="item in this.$store.state.ContractModule.allContracts"
-    :key="item.id">
-    <div @click="$router.push(`/contract/${item.id}`)">
-      Дата: {{ item.date }} / Номер: {{ item.number }} / Описание:
-      {{ item.description }}
+  <div class="wraper">
+    <h2>Все договоры</h2>
+    <div class="list-group-wraper">
+      <div
+        class="list-group"
+        v-for="item in this.$store.state.ContractModule.allContracts"
+        :key="item.id"
+      >
+        <div
+          class="list-group-item"
+          @click="$router.push(`/contract/${item.id}`)"
+        >
+          № {{ item.number }} От {{ item.date }} // {{ item.description }}
+        </div>
+      </div>
+      <Paginator @change="setPage" :page="page" :totalPage="totalPages" />
+      <div>
+        Вывести на старинцу:
+        <select class="paginator-select" @change="setItems($event)">
+          <option value="" disabled selected>{{ itemsPerPage }}</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+        </select>
+      </div>
     </div>
-  </div>
-  <div
-    v-for="pageNumber in this.$store.state.CompanyModule.totalPages"
-    :key="pageNumber"
-  >
-    <p @click="setPage(pageNumber)">{{ pageNumber }}</p>
-  </div>
-  <div>
-    <p @click="setItems(6)">Показывать по 6</p>
-    <p @click="setItems(10)">Показывать по 10</p>
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import NavBar from "@/components/NavBar.vue";
+import Paginator from "@/components/ForAllCards/Paginator.vue";
 export default {
   name: "contract",
-  components: { NavBar },
+  data() {
+    return {
+      page: 1,
+      items: 5,
+    };
+  },
+  components: { NavBar,  Paginator  },
+  computed: {
+    ...mapState({
+      totalPages: (state) => state.ContractModule.totalPages,
+      allCompanies: (state) => state.ContractModule.allCompanies,
+      itemsPerPage: (state) => state.ContractModule.itemsPerPage,
+    }),
+  },
   methods: {
     setPage(number) {
       (this.page = number),
-        this.$store.dispatch("ContractModule/fetchAllContracts", this.page);
+      this.$store.dispatch("ContractModule/fetchAllContracts", this.page);
     },
     setItems(number) {
       (this.items = number),
-        this.$store.commit("CompanyModule/setItemsPerPages", this.items);
-      this.$store.dispatch("ContractModule/fetchAllContracts", 1);
+      this.$store.commit("CompanyModule/setItemsPerPages", this.items);
+      this.$store.dispatch("ContractModule/fetchAllContracts",  1, this.items);
+      this.page = 1;
     },
   },
   mounted() {
-    this.$store.dispatch(
-      "ContractModule/fetchAllContracts",
-      this.page,
-      this.items
-    );
+    this.$store.dispatch("ContractModule/fetchAllContracts", this.page, 5);
   },
 };
 </script>

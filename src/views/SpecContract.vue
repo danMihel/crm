@@ -1,6 +1,7 @@
 <template>
   <NavBar />
-  <div>Описание:{{ contract.description }}</div>
+  <div class="wraper"> 
+    <div>Описание:{{ contract.description }}</div>
   <div>Дата:{{ contract.date }}</div>
   <div>Стоимость:{{ contract.amount }}</div>
   <div>
@@ -20,6 +21,8 @@
     <div v-for="manager in contract.responsible" :key="manager.id">
       {{ manager.name }}
     </div>
+  </div>
+
   </div>
 </template>
 <script>
