@@ -15,7 +15,7 @@
        name: "person-contracts",
        computed: {
            ...mapState({
-               contracts: (state) => state.personModule.person.contracts,
+               contracts: (state) => state.PersonModule.person.contracts,
            }),
        },
        components: { Contract }

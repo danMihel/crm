@@ -4,7 +4,7 @@
     <h2>Все клиенты</h2>
     <div class="list-group-wraper">
       <div class="list-group"
-        v-for="item in this.$store.state.personModule.allpersons"
+        v-for="item in this.$store.state.PersonModule.allpersons"
         :key="item.id">
         <div class="list-group-item"
           @click="$router.push(`/person/${item.id}`)">
@@ -39,25 +39,25 @@ export default {
   },
   computed: {
     ...mapState({
-      totalPages: (state) => state.personModule.totalPages,
-      allCompanies: (state) => state.personModule.allCompanies,
-      itemsPerPage: (state) => state.personModule.itemsPerPage,
+      totalPages: (state) => state.PersonModule.totalPages,
+      allCompanies: (state) => state.PersonModule.allCompanies,
+      itemsPerPage: (state) => state.PersonModule.itemsPerPage,
     }),
   },
   methods: {
     setPage(number) {
       (this.page = number),
-        this.$store.dispatch("personModule/fetchAllpersons", this.page);
+        this.$store.dispatch("PersonModule/fetchAllpersons", this.page);
     },
     setItems(event) {
       (this.items = event.target.value),
-        this.$store.commit("personModule/setItemsPerPages", this.items);
-      this.$store.dispatch("personModule/fetchAllpersons", 1, this.items);
+        this.$store.commit("PersonModule/setItemsPerPages", this.items);
+      this.$store.dispatch("PersonModule/fetchAllpersons", 1, this.items);
       this.page = 1;
     },
   },
   mounted() {
-    this.$store.dispatch("personModule/fetchAllpersons", this.page, 5);
+    this.$store.dispatch("PersonModule/fetchAllpersons", this.page, 5);
   },
 };
 </script>

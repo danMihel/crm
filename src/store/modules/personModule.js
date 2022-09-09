@@ -1,6 +1,6 @@
 import API from "@/API/index";
 
-export const personModule = {
+export const PersonModule = {
   namespaced: true,
   state() {
     return {

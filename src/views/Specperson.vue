@@ -23,7 +23,7 @@ export default {
     personContractCard,
   },
   mounted() {
-    this.$store.dispatch("personModule/fetchIdperson", this.$route.params.id);
+    this.$store.dispatch("PersonModule/fetchIdperson", this.$route.params.id);
   },
 };
 </script>

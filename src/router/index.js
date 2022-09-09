@@ -31,7 +31,7 @@ const routes = [
   {
     path: '/person/:id',
     name: 'spec-person',
-     component: () => import('@/views/Specperson.vue')
+     component: () => import('@/views/SpecPerson.vue')
   },
   {
     path: '/contract',

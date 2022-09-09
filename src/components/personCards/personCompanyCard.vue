@@ -17,7 +17,7 @@ export default {
   name: "person-company-card",
   computed: {
     ...mapState({
-      companies: (state) => state.personModule.person.companies,
+      companies: (state) => state.PersonModule.person.companies,
     }),
   },
   components: { Company },

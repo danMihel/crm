@@ -13,7 +13,7 @@ export default {
   name: "person-cases",
   computed: {
     ...mapState({
-      cases: (state) => state.personModule.person.cases,
+      cases: (state) => state.PersonModule.person.cases,
     }),
   },
   components: { Case },

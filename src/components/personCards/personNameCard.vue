@@ -11,7 +11,7 @@
     name: "person-name",
     computed: {
       ...mapState({
-        person: (state) => state.personModule.person,
+        person: (state) => state.PersonModule.person,
       }),
     },
   };
