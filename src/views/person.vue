@@ -4,10 +4,10 @@
     <h2>Все клиенты</h2>
     <div class="list-group-wraper">
       <div class="list-group"
-        v-for="item in this.$store.state.ClientModule.allClients"
+        v-for="item in this.$store.state.personModule.allpersons"
         :key="item.id">
         <div class="list-group-item"
-          @click="$router.push(`/client/${item.id}`)">
+          @click="$router.push(`/person/${item.id}`)">
           {{ item.name }}
         </div>
       </div>
@@ -29,7 +29,7 @@ import { mapState } from "vuex";
 import NavBar from "@/components/NavBar.vue";
 import Paginator from "@/components/ForAllCards/Paginator.vue";
 export default {
-  name: "client",
+  name: "person",
   components: { NavBar, Paginator },
   data() {
     return {
@@ -39,25 +39,25 @@ export default {
   },
   computed: {
     ...mapState({
-      totalPages: (state) => state.ClientModule.totalPages,
-      allCompanies: (state) => state.ClientModule.allCompanies,
-      itemsPerPage: (state) => state.ClientModule.itemsPerPage,
+      totalPages: (state) => state.personModule.totalPages,
+      allCompanies: (state) => state.personModule.allCompanies,
+      itemsPerPage: (state) => state.personModule.itemsPerPage,
     }),
   },
   methods: {
     setPage(number) {
       (this.page = number),
-        this.$store.dispatch("ClientModule/fetchAllClients", this.page);
+        this.$store.dispatch("personModule/fetchAllpersons", this.page);
     },
     setItems(event) {
       (this.items = event.target.value),
-        this.$store.commit("ClientModule/setItemsPerPages", this.items);
-      this.$store.dispatch("ClientModule/fetchAllClients", 1, this.items);
+        this.$store.commit("personModule/setItemsPerPages", this.items);
+      this.$store.dispatch("personModule/fetchAllpersons", 1, this.items);
       this.page = 1;
     },
   },
   mounted() {
-    this.$store.dispatch("ClientModule/fetchAllClients", this.page, 5);
+    this.$store.dispatch("personModule/fetchAllpersons", this.page, 5);
   },
 };
 </script>

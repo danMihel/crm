@@ -1,8 +1,8 @@
 <template>
-    <div class="client-company_main-title">Связанные компании</div>
-    <div class="client-company-container">
+    <div class="person-company_main-title">Связанные компании</div>
+    <div class="person-company-container">
       <div
-        class="client-company-element"
+        class="person-company-element"
         v-for="item in companies"
         :key="item.id"
       >
@@ -14,29 +14,29 @@
 import { mapState } from "vuex";
 import Company from "@/components/ForAllCards/Company.vue";
 export default {
-  name: "client-company-card",
+  name: "person-company-card",
   computed: {
     ...mapState({
-      companies: (state) => state.ClientModule.client.companies,
+      companies: (state) => state.personModule.person.companies,
     }),
   },
   components: { Company },
 };
 </script>
 <style scoped>
-.client-company_main-title {
+.person-company_main-title {
   font-weight: 600;
   font-size: 1.5rem;
   background-color: #5e79ec;
   padding: 1rem;
   border: solid rgb(219, 217, 217) 1px 1px 1px 0;
 }
-.client-company-element {
+.person-company-element {
   display: flex;
   padding: 1rem;
   align-items: center;
 }
-.client-company-container {
+.person-company-container {
   display: flex;
   padding: 30px;
   border: solid rgb(219, 217, 217) 1px;

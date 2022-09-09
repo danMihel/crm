@@ -5,7 +5,7 @@
         <router-link to="/">Главная</router-link>
         <div>
           <p><router-link to="/company">Компании</router-link></p>
-          <p><router-link to="/client">Персоны</router-link></p>
+          <p><router-link to="/person">Персоны</router-link></p>
         </div>
         <router-link to="/contract">Договоры</router-link>
         <router-link to="/case">Дела</router-link>

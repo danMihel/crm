@@ -1,22 +1,22 @@
 import API from "@/API/index";
 
-export const ClientModule = {
+export const personModule = {
   namespaced: true,
   state() {
     return {
-      client: {},
-      allClients: [],
+      person: {},
+      allpersons: [],
       totalPages: '',
       currentPage: 1,
       itemsPerPage: 5,
     };
   },
   mutations: {
-    setClient(state, data) {
-      state.client = data;
+    setperson(state, data) {
+      state.person = data;
     },
-    setAllClients(state, data) {
-      state.allClients = data;
+    setAllpersons(state, data) {
+      state.allpersons = data;
     },
     setTotlaPages(state, data) {
       state.totalPages = data;
@@ -26,20 +26,20 @@ export const ClientModule = {
     },
   },
   actions: {
-    async fetchIdClient({ commit}, id,) {
+    async fetchIdperson({ commit}, id,) {
       const url = '/persons'
       return API.getElement(id, url).then((res) => {
         console.log(res.data)
-        commit("setClient", res.data)
+        commit("setperson", res.data)
       });
     },
 
-    async fetchAllClients( { commit, state },
+    async fetchAllpersons( { commit, state },
       page = 1,
       items = state.itemsPerPage) {
       const url = `/persons/${page}/${items}`
       return API.getElement("", url).then((res) => {
-        commit("setAllClients", res.data.page);
+        commit("setAllpersons", res.data.page);
         commit("setTotlaPages", res.data.count);
       });
     },

@@ -1,14 +1,14 @@
 <template>
   <div
-    class="client-company-element"
+    class="person-company-element"
     @click="$router.push(`/company/${company.id}`)">
-    <div class="client-company-name">{{ company.company }}</div>
-    <div class="client-company-data">{{ company.position }}</div>
+    <div class="person-company-name">{{ company.company }}</div>
+    <div class="person-company-data">{{ company.position }}</div>
   </div>
 </template>
 <script>
 export default {
-  name: "client-company",
+  name: "person-company",
   props: {
     company: {
       type: Object,
@@ -18,19 +18,19 @@ export default {
 };
 </script>
 <style scoped>
-.client-company-element {
+.person-company-element {
   display: flex;
   padding: 1rem;
   align-items: center;
 }
 
-.client-company-element:not(:last-child) {
+.person-company-element:not(:last-child) {
   border-bottom: 1px solid rgb(117, 117, 117);
 }
-.client-company-name {
+.person-company-name {
   font-weight: 600;
 }
-.client-company-data {
+.person-company-data {
   margin-left: 3rem;
 }
 .case-element:not(:last-child) {

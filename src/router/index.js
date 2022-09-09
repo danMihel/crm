@@ -24,14 +24,14 @@ const routes = [
      component: () => import('@/views/SpecCompany.vue')
   },
   {
-    path: '/client',
-    name: 'client',
-     component: () => import('@/views/Client.vue')
+    path: '/person',
+    name: 'person',
+     component: () => import('@/views/person.vue')
   },
   {
-    path: '/client/:id',
-    name: 'spec-client',
-     component: () => import('@/views/SpecClient.vue')
+    path: '/person/:id',
+    name: 'spec-person',
+     component: () => import('@/views/Specperson.vue')
   },
   {
     path: '/contract',
