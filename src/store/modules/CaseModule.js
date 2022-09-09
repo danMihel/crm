@@ -32,7 +32,6 @@ export const CaseModule = {
         commit("setCase", res.data);
       });
     },
-
     async fetchAllCases({ commit }) {
       const url = "/cases";
       return API.getElement("", url).then((res) => {

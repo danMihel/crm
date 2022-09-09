@@ -3,8 +3,10 @@
     <div>
       <div class="nav-items">
         <router-link to="/">Главная</router-link>
-        <router-link to="/company">Компании</router-link>
-        <router-link to="/client">Клиенты</router-link>
+        <div>
+          <p><router-link to="/company">Компании</router-link></p>
+          <p><router-link to="/client">Персоны</router-link></p>
+        </div>
         <router-link to="/contract">Договоры</router-link>
         <router-link to="/case">Дела</router-link>
       </div>

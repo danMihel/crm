@@ -1,32 +1,13 @@
 <template>
   <NavBar />
   <div class="wraper">
-    <div>Описание:{{ contract.description }}</div>
-    <div>Дата:{{ contract.date }}</div>
-    <div>Стоимость:{{ contract.amount }}</div>
-    <div>
-      Компания:
-      <div v-for="company in contract.company" :key="company.id">
-        {{ company.name }}
-      </div>
-    </div>
-    <div>
-      Клиенты:
-      <div v-for="client in contract.person" :key="client.id">
-        {{ client.person }}
-      </div>
-    </div>
-    <div>
-      Менеджер:
-      <div v-for="manager in contract.responsible" :key="manager.id">
-        {{ manager.name }}
-      </div>
-    </div>
+    <ContractCard/>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
 import NavBar from "@/components/NavBar.vue";
+import ContractCard from '@/components/ContractCards/ContractCard.vue'
 export default {
   name: "spec-contract",
   computed: {
@@ -34,7 +15,7 @@ export default {
       contract: (state) => state.ContractModule.contract,
     }),
   },
-  components: { NavBar },
+  components: { NavBar, ContractCard },
   mounted() {
     this.$store.dispatch(
       "ContractModule/fetchIdContract",

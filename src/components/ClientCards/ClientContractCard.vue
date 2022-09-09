@@ -1,6 +1,6 @@
 <template>
     <div>
-       <div class="client-case__main-title">Догвооры</div>
+       <div class="client-case__main-title">Договоры</div>
        <div class="client-case-container">
          <div class="client-case-element" v-for="item in contracts" :key="item.id">
            <Contract :contract ="item"/>
