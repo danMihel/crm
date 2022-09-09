@@ -24,7 +24,6 @@ h2{
 }
 .list-group-item {
   padding: 1rem;
-  list-style: none;
   border: 1px solid rgb(219, 217, 217);
   border-radius: 10px;
 }

@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="person-company-element"
+  <div class="person-company-element"
     @click="$router.push(`/company/${company.id}`)">
     <div class="person-company-name">{{ company.company }}</div>
     <div class="person-company-data">{{ company.position }}</div>

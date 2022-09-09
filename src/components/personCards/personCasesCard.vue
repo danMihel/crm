@@ -1,6 +1,7 @@
 <template>
   <div class="person-case__main-title">Дела</div>
   <div class="person-case-container">
+    <AddBtn/>
     <div v-for="item in cases" :key="item.id">
       <Case :case="item" />
     </div>
@@ -9,6 +10,7 @@
 <script>
 import { mapState } from "vuex";
 import Case from "@/components/ForAllCards/Case.vue";
+import AddBtn from "../UI/AddBtn.vue";
 export default {
   name: "person-cases",
   computed: {
@@ -16,7 +18,7 @@ export default {
       cases: (state) => state.PersonModule.person.cases,
     }),
   },
-  components: { Case },
+  components: { Case, AddBtn },
 };
 </script>
 <style scoped>
