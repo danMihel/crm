@@ -11,9 +11,13 @@ export const CaseModule = {
       itemsPerPage: 5,
       companyId:'3',
       searchQuery:'',
+      searchedCompany:''
     };
   },
   mutations: {
+    searchedCompany(state, data){
+      state.searchedCompany = data
+    },
     setSearchQuery(state, data){
       state.searchQuery = data
     },
@@ -50,13 +54,12 @@ export const CaseModule = {
     async postCompany({state} ) {
       const url = "/cases/addcompany";
       return API.postElement(url, state.case.id, state.companyId ).then((res) => {
-        console.log(res)
       });
     },
-    async findCompany({state}) {
+    async findCompany({commit,state}) {
       const url = "/companies/find";
       return API.findElement(url, state.searchQuery).then((res) => {
-        console.log(res)
+        commit("searchedCompany", res.data);
       });
     },
   },

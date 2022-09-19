@@ -9,8 +9,10 @@
     </div>
     <div>
     <p>Добавить компанию</p>
-    <input v-model="Query" @input="print"  type="text"/>
-    <button @click="findCompany">Добавить</button>
+    <input v-model="Query" @input="findCompany"  type="text"/>
+    <div v-for="item in searchedCompany" :key="item.id">
+      <div>{{item.name}}</div>
+    </div>
   </div>
   </div>
 </template>
@@ -32,17 +34,15 @@ export default {
       await this.$store.dispatch("CaseModule/fetchIdCase", this.$route.params.id);
     },
     async findCompany (){
+      await  this.$store.commit("CaseModule/setSearchQuery", this.Query);
       await this.$store.dispatch("CaseModule/findCompany");
+      
     },
-    print(){
-      this.$store.commit("CaseModule/setSearchQuery", this.Query);
-      console.log(this.searchQuery);
-    }
   },
   computed: {
     ...mapState({
       cases: (state) => state.CaseModule.case,
-      searchQuery:(state) => state.CaseModule.searchQuery
+      searchedCompany:(state) => state.CaseModule.searchedCompany
     }),
   },
   mounted() {
