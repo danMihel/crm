@@ -20,7 +20,21 @@ export default {
     });
   },
 
-  async postElement(url = "", caseId="", companyId="") {
+  async findElement(url = "", searchQuery = "") {
+    return axios.post(
+      this.baseURL + `${url}`,
+      {
+        company: searchQuery,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.accessToken}`,
+        },
+      }
+    );
+  },
+
+  async postElement(url = "", caseId = "", companyId = "") {
     return axios.post(
       this.baseURL + `${url}`,
       {

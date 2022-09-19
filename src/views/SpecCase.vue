@@ -9,8 +9,8 @@
     </div>
     <div>
     <p>Добавить компанию</p>
-    <input type="text"/>
-    <button @click="addCompany">Добавить</button>
+    <input v-model="Query" @input="print"  type="text"/>
+    <button @click="findCompany">Добавить</button>
   </div>
   </div>
 </template>
@@ -19,17 +19,30 @@ import NavBar from "@/components/NavBar.vue";
 import { mapState } from "vuex";
 export default {
   name: "spec-case",
+  data(){
+    return {
+      Query:''
+    }
+  },
   components: { NavBar },
   methods:{
    async addCompany(){
       console.log(this.cases.id)
       await this.$store.dispatch("CaseModule/postCompany");
       await this.$store.dispatch("CaseModule/fetchIdCase", this.$route.params.id);
+    },
+    async findCompany (){
+      await this.$store.dispatch("CaseModule/findCompany");
+    },
+    print(){
+      this.$store.commit("CaseModule/setSearchQuery", this.Query);
+      console.log(this.searchQuery);
     }
   },
   computed: {
     ...mapState({
       cases: (state) => state.CaseModule.case,
+      searchQuery:(state) => state.CaseModule.searchQuery
     }),
   },
   mounted() {
