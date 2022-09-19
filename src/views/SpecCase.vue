@@ -11,7 +11,7 @@
     <p>Добавить компанию</p>
     <input v-model="Query" @input="findCompany"  type="text"/>
     <div v-for="item in searchedCompany" :key="item.id">
-      <div>{{item.name}}</div>
+      <div @click="addCompany(item)">{{item.name}}</div>
     </div>
   </div>
   </div>
@@ -28,9 +28,9 @@ export default {
   },
   components: { NavBar },
   methods:{
-   async addCompany(){
+   async addCompany(item){
       console.log(this.cases.id)
-      await this.$store.dispatch("CaseModule/postCompany");
+      await this.$store.dispatch("CaseModule/postCompany", item.id);
       await this.$store.dispatch("CaseModule/fetchIdCase", this.$route.params.id);
     },
     async findCompany (){

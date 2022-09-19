@@ -51,9 +51,9 @@ export const CaseModule = {
         commit("setTotlaPages", res.data.count);
       });
     },
-    async postCompany({state} ) {
+    async postCompany({state}, company ) {
       const url = "/cases/addcompany";
-      return API.postElement(url, state.case.id, state.companyId ).then((res) => {
+      return API.postElement(url, state.case.id, company ).then((res) => {
       });
     },
     async findCompany({commit,state}) {
