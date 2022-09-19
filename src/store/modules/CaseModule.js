@@ -9,9 +9,13 @@ export const CaseModule = {
       totalPages: "",
       currentPage: 1,
       itemsPerPage: 5,
+      companyId:'3'
     };
   },
   mutations: {
+    setCaseId(state, data){
+      state.companyId = data
+    },
     setCase(state, data) {
       state.case = data;
     },
@@ -40,6 +44,12 @@ export const CaseModule = {
       return API.getElement("", url).then((res) => {
         commit("setAllCases", res.data.page);
         commit("setTotlaPages", res.data.count);
+      });
+    },
+    async postCompany({state} ) {
+      const url = "/cases/addcompany";
+      return API.postElement(url, state.case.id, state.companyId ).then((res) => {
+        console.log(res)
       });
     },
   },
