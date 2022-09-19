@@ -9,6 +9,9 @@
   -moz-osx-font-smoothing: grayscale;
   box-sizing: content-box;
 }
+li{
+  list-style: none;
+}
 h2{
   text-align: center;
 }

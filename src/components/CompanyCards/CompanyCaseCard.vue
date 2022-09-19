@@ -1,18 +1,21 @@
 <template>
   <div class="case__main-title">Дела</div>
   <div class="case-container">
+    <div>
+      <AddBtn/>
+    </div>
     <div v-for="item in cases" :key="item.id">
       <Case :case="item" />
     </div>
-    <div class="add-case">Добавить</div>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
 import Case from "@/components/ForAllCards/Case.vue";
+import AddBtn from "../UI/AddBtn.vue";
 export default {
   name: "case-card",
-  components: { Case },
+  components: { Case, AddBtn },
   computed: {
     ...mapState({
       cases: (state) => state.CompanyModule.company.cases,
@@ -21,10 +24,6 @@ export default {
 };
 </script>
 <style>
-.add-case {
-  align-self: center;
-  margin-left: 2rem;
-}
 .case__main-title {
   font-weight: 600;
   font-size: 1.5rem;

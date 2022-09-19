@@ -30,5 +30,5 @@
     white-space: nowrap;
   }
   .margin-top{
-  margin-top: 1rem;
+  margin: 1rem 0;
 }  </style>

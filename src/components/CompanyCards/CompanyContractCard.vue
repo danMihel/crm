@@ -1,15 +1,18 @@
 <template>
   <div class="contract__header">Договоры</div>
   <div class="contract-container">
+    <div>
+      <AddBtn/>
+    </div>
     <div v-for="item in contracts" :key="item.id">
       <Contract :contract="item" />
     </div>
-    <div class="add-contract">Добавить</div>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
 import Contract from "../ForAllCards/Contract.vue";
+import AddBtn from "../UI/AddBtn.vue";
 export default {
   name: "company-contract,",
   computed: {
@@ -17,14 +20,10 @@ export default {
       contracts: (state) => state.CompanyModule.company.contracts,
     }),
   },
-  components: { Contract },
+  components: { Contract, AddBtn },
 };
 </script>
 <style scoped>
-.add-contract {
-  align-self: center;
-  margin-left: 2rem;
-}
 .contract-container {
   padding: 30px;
   border: solid rgb(219, 217, 217) 1px;

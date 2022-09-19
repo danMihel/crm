@@ -1,18 +1,21 @@
 <template>
     <div class="person__header">Контактные лица</div>
     <div class="person-container">
+      <div>
+        <AddBtn/>
+      </div>
       <div class="person-element" v-for="item in persons" :key="item.id">
         <Persone :person="item" :key="item.id"/>
       </div>
-      <div class="add-person"> Добавить</div>
     </div>
 </template>
 <script>
   import { mapState } from 'vuex';
   import Persone from '@/components/ForAllCards/Persone.vue';
+import AddBtn from '../UI/AddBtn.vue';
 export default {
   name: "persons-card",
-  components: { Persone },
+  components: { Persone, AddBtn },
   computed: {
       ...mapState({
         persons: (state) => state.CompanyModule.company.persons,
@@ -32,6 +35,7 @@ export default {
   }
 .person-container {
   display: flex;
+  align-items: center;
   padding: 30px;
   border: solid rgb(219, 217, 217) 1px;
   background-color: rgb(250, 250, 250);

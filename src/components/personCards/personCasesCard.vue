@@ -1,7 +1,7 @@
 <template>
   <div class="person-case__main-title">Дела</div>
   <div class="person-case-container">
-    <AddBtn/>
+    <AddBtn />
     <div v-for="item in cases" :key="item.id">
       <Case :case="item" />
     </div>

@@ -15,7 +15,10 @@ export default {
   justify-content: center;
   padding: 1rem;
   border: 1px solid rgb(219, 217, 217);
-  border-radius: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: auto;
   background-color: rgb(228, 228, 228);
 }
 .add-sign-container:hover {

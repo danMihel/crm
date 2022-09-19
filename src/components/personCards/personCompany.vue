@@ -32,7 +32,4 @@ export default {
 .person-company-data {
   margin-left: 3rem;
 }
-.case-element:not(:last-child) {
-  border-bottom: 1px solid rgb(117, 117, 117);
-}
 </style>

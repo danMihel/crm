@@ -25,6 +25,6 @@ export default {
   margin-left: 3rem;
 }
 .margin-top{
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 </style>

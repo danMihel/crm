@@ -1,6 +1,9 @@
 <template>
        <div class="person-case__main-title">Договоры</div>
        <div class="person-case-container">
+        <div>
+          <AddBtn/>
+        </div>
          <div v-for="item in contracts" :key="item.id">
            <Contract :contract ="item"/>
          </div>
@@ -9,6 +12,7 @@
    <script>
    import { mapState } from "vuex";
    import Contract from "@/components/ForAllCards/Contract.vue";
+import AddBtn from "../UI/AddBtn.vue";
    export default {
        name: "person-contracts",
        computed: {
@@ -16,7 +20,7 @@
                contracts: (state) => state.PersonModule.person.contracts,
            }),
        },
-       components: { Contract }
+       components: { Contract, AddBtn }
    };
    </script>
    <style scoped>
@@ -31,15 +35,6 @@
        padding: 30px;
        border: solid rgb(219, 217, 217) 1px;
        background-color: rgb(250, 250, 250);
-     }
-     .person-case-element {
-       display: flex;
-       padding: 1rem;
-       align-items: center;
-     }
-     .person-case-element:not(:last-child) {
-       border-bottom: 1px solid rgb(117, 117, 117);
-     }
-   
+     }   
      </style>
    
