@@ -9,13 +9,12 @@ export const CaseModule = {
       totalPages: "",
       currentPage: 1,
       itemsPerPage: 5,
-      companyId:'3',
       searchQuery:'',
       searchedCompany:''
     };
   },
   mutations: {
-    searchedCompany(state, data){
+    setSearchedCompany(state, data){
       state.searchedCompany = data
     },
     setSearchQuery(state, data){
@@ -57,10 +56,18 @@ export const CaseModule = {
       });
     },
     async findCompany({commit,state}) {
-      const url = "/companies/find";
-      return API.findElement(url, state.searchQuery).then((res) => {
-        commit("searchedCompany", res.data);
+      if(state.searchQuery.length < 1){
+        commit("setSearchedCompany", '');
+      } else{
+        const url = "/search";
+        const dataObj = {
+          company: state.searchQuery,
+        }
+      return API.findElement(url, dataObj).then((res) => {
+        commit("setSearchedCompany", res.data);
       });
+      }
+      
     },
   },
 };

@@ -20,12 +20,10 @@ export default {
     });
   },
 
-  async findElement(url = "", searchQuery = "") {
+  async findElement(url = "", dataObj = {}) {
     return axios.post(
       this.baseURL + `${url}`,
-      {
-        company: searchQuery,
-      },
+      dataObj,
       {
         headers: {
           Authorization: `Bearer ${sessionStorage.accessToken}`,
