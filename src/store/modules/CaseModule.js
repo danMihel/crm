@@ -37,7 +37,6 @@ export const CaseModule = {
     async fetchIdCase({ commit }, id) {
       const url = "/cases";
       return API.getElement(id, url).then((res) => {
-        console.log(res.data)
         commit("setCase", res.data);
       });
     },
@@ -52,8 +51,7 @@ export const CaseModule = {
     },
     async postCompany({state}, company ) {
       const url = "/cases/addcompany";
-      return API.postElement(url, state.case.id, company ).then((res) => {
-      });
+      return API.postElement(url, state.case.id, company );
     },
     async findCompany({commit,state}) {
       if(state.searchQuery.length < 1){
@@ -67,7 +65,6 @@ export const CaseModule = {
         commit("setSearchedCompany", res.data);
       });
       }
-      
     },
   },
 };

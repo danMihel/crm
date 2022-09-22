@@ -14,6 +14,7 @@
           <div v-for="item in cases.companies" :key="item.id">
             <div>{{ item.name }}</div>
           </div>
+          <CaseAddCompanyCard/>
         </div>
       </div>
       <div class="case-element">
@@ -37,14 +38,16 @@
 </template>
 <script>
 import { mapState } from "vuex";
+import CaseAddCompanyCard from "./CaseAddCompanyCard.vue";
 export default {
-  name: "case-card",
-  computed: {
-    ...mapState({
-      cases: (state) => state.CaseModule.case,
-      searchedCompany: (state) => state.CaseModule.searchedCompany,
-    }),
-  },
+    name: "case-card",
+    computed: {
+        ...mapState({
+            cases: (state) => state.CaseModule.case,
+            searchedCompany: (state) => state.CaseModule.searchedCompany,
+        }),
+    },
+    components: { CaseAddCompanyCard }
 };
 </script>
 <style>

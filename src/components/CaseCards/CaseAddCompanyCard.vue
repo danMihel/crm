@@ -1,7 +1,6 @@
 <template>
   <div>
-    <p>Добавить компанию</p>
-    <input v-model="query" @input="findElement" type="text" />
+    <input v-model="query" @input="findCompany" type="text" />
     <div v-for="item in searchedCompany" :key="item.id">
       <div @click="addCompany(item)">{{ item.name }}</div>
     </div>
@@ -19,16 +18,13 @@ export default {
   methods: {
     async addCompany(item) {
       await this.$store.dispatch("CaseModule/postCompany", item.id);
-      await this.$store.dispatch(
-        "CaseModule/fetchIdCase",
-        this.$route.params.id
-      );
+      await this.$store.dispatch("CaseModule/fetchIdCase", this.$route.params.id);
       await this.$store.commit("CaseModule/setSearchedCompany", "");
       this.query = "";
     },
-    async findElement() {
+    async findCompany() {
       await this.$store.commit("CaseModule/setSearchQuery", this.query);
-      await this.$store.dispatch("CaseModule/findCompany");
+      await this.$store.dispatch("CaseModule/findCompany",);
     },
   },
   computed: {
