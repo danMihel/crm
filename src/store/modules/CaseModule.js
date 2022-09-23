@@ -53,6 +53,10 @@ export const CaseModule = {
       const url = "/cases/addcompany";
       return API.postElement(url, state.case.id, company );
     },
+    async postPerson({state}, person ) {
+      const url = "/cases/addperson";
+      return API.postElement(url, state.case.id, person );
+    },
     async findCompany({commit,state}) {
       if(state.searchQuery.length < 1){
         commit("setSearchedCompany", '');
