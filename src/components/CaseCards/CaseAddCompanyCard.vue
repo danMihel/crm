@@ -5,7 +5,7 @@
     <div @click=" closeSearchInput">Закрыть</div>
     <input v-model="query" @input="findCompany" type="text" class="add-company-input"/>
     <div v-for="item in searchedCompany" :key="item.id" class="add-company-output">
-      <div class="add-company-input-item" @click="addCompany(item)">{{ item.name }}</div>
+      <div class="add-company-output-item" @click="addCompany(item)">{{ item.name }}</div>
     </div>
   </div>
 </template>
