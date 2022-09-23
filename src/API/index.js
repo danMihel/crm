@@ -32,12 +32,13 @@ export default {
     );
   },
 
-  async postElement(url = "", caseId = "", companyId = "") {
+  async postElement(url = "", caseId = "", companyId = "", personId= "") {
     return axios.post(
       this.baseURL + `${url}`,
       {
         case: caseId,
         company: companyId,
+        person: personId
       },
       {
         headers: {

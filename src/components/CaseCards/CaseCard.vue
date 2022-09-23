@@ -23,6 +23,7 @@
           <div v-for="item in cases.persons" :key="item.id">
             <div>{{ item.name }}</div>
           </div>
+          <CaseAddPersonCard/>
         </div>
       </div>
       <div class="case-element">
@@ -39,6 +40,7 @@
 <script>
 import { mapState } from "vuex";
 import CaseAddCompanyCard from "./CaseAddCompanyCard.vue";
+import CaseAddPersonCard from "./CaseAddPersonCard.vue";
 export default {
     name: "case-card",
     computed: {
@@ -47,7 +49,7 @@ export default {
             searchedCompany: (state) => state.CaseModule.searchedCompany,
         }),
     },
-    components: { CaseAddCompanyCard }
+    components: { CaseAddCompanyCard, CaseAddPersonCard }
 };
 </script>
 <style>

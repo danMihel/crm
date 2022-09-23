@@ -3,16 +3,16 @@
   <div v-if="!visible" @click="visible = !visible">Добавить</div>
   <div v-if="visible">
     <div @click=" closeSearchInput">Закрыть</div>
-    <input v-model="query" @input="findCompany" type="text" class="add-company-input"/>
-    <div v-for="item in searchedCompany" :key="item.id" class="add-company-output">
-      <div class="add-company-input-item" @click="addCompany(item)">{{ item.name }}</div>
+    <input v-model="query" @input="findPerson" type="text" class="add-company-input"/>
+    <div v-for="item in searchedPerson" :key="item.id" class="add-company-output">
+      <div class="add-company-input-item" @click="addPerson(item)">{{ item.name }}</div>
     </div>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
 export default {
-  name: "case-add-company-card",
+  name: "case-add-person-card",
   data() {
     return {
       visible: false,
@@ -20,27 +20,29 @@ export default {
     };
   },
   methods: {
-    async addCompany(item) {
-      await this.$store.dispatch("CaseModule/postCompany", item.id);
+    async addPerson(item) {
+      console.log('addPErson')
+      await this.$store.dispatch("CaseModule/postPerson", item.id);
       await this.$store.dispatch("CaseModule/fetchIdCase", this.$route.params.id);
-      await this.$store.commit("CaseModule/setSearchedCompany", "");
+      await this.$store.commit("CaseModule/setSearchedPerson", "");
       this.query = "";
       this.visible = false;
     },
-    async findCompany() {
+    async findPerson() {
+      console.log('find PErson')
       await this.$store.commit("CaseModule/setSearchQuery", this.query);
-      await this.$store.dispatch("CaseModule/findCompany",);
+      await this.$store.dispatch("CaseModule/findPerson",);
     },
     closeSearchInput(){
       this.query = "";
       this.visible = false;
-      this.$store.commit("CaseModule/setSearchedCompany", "");
+      this.$store.commit("CaseModule/setSearchedPerson", "");
     }
   },
   computed: {
     ...mapState({
       cases: (state) => state.CaseModule.case,
-      searchedCompany: (state) => state.CaseModule.searchedCompany,
+      searchedPerson: (state) => state.CaseModule.searchedPerson,
     }),
   },
 };

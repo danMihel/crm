@@ -10,12 +10,16 @@ export const CaseModule = {
       currentPage: 1,
       itemsPerPage: 5,
       searchQuery:'',
-      searchedCompany:''
+      searchedCompany:'',
+      searchedPerson: ''
     };
   },
   mutations: {
     setSearchedCompany(state, data){
       state.searchedCompany = data
+    },
+    setSearchedPerson(state, data){
+      state.searchedPerson = data
     },
     setSearchQuery(state, data){
       state.searchQuery = data
@@ -55,11 +59,11 @@ export const CaseModule = {
     },
     async postPerson({state}, person ) {
       const url = "/cases/addperson";
-      return API.postElement(url, state.case.id, person );
+      return API.postElement(url, state.case.id, '', person );
     },
     async findCompany({commit,state}) {
       if(state.searchQuery.length < 1){
-        commit("setSearchedCompany", '');
+        commit("setSearchedCompany", ''); 
       } else{
         const url = "/search";
         const dataObj = {
@@ -67,6 +71,20 @@ export const CaseModule = {
         }
       return API.findElement(url, dataObj).then((res) => {
         commit("setSearchedCompany", res.data);
+      });
+      }
+    },
+    async findPerson({commit,state}) {
+      if(state.searchQuery.length < 1){
+        commit("setSearchedPerson", '');
+      } else{
+        console.log('find')
+        const url = "/search";
+        const dataObj = {
+          person: state.searchQuery,
+        }
+      return API.findElement(url, dataObj).then((res) => {
+        commit("setSearchedPerson", res.data);
       });
       }
     },
